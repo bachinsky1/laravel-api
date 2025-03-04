@@ -80,5 +80,7 @@ Route::middleware('auth:sanctum')->group(function () {
 });
 
 
-Route::post('/send-email', [MailController::class, 'send']);
-Route::get('/weather', [WeatherController::class, 'getWeather']);
+Route::middleware('auth:sanctum')->group(function () {
+    Route::post('/send-email', [MailController::class, 'send']);
+    Route::get('/weather', [WeatherController::class, 'getWeather']);
+});
