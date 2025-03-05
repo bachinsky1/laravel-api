@@ -22,6 +22,7 @@ use App\Http\Controllers\WeatherController;
 use Illuminate\Support\Facades\Gate;
 
 
+
 Route::post('/register', function (Request $request) {
     $request->validate([
         'name' => 'required|string',
@@ -77,10 +78,6 @@ Route::get('/admin', function () {
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::apiResource('posts', PostController::class);
-});
-
-
-Route::middleware('auth:sanctum')->group(function () {
     Route::post('/send-email', [MailController::class, 'send']);
     Route::get('/weather', [WeatherController::class, 'getWeather']);
 });

@@ -10,6 +10,10 @@ use App\Jobs\SendEmailJob;
  */
 class MailController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth:sanctum');
+    }
     /**
      * @OA\Post(
      *     path="/api/send-email",
