@@ -78,11 +78,7 @@ http://localhost:8080
 Пароль: `root`
 
 ## Перевірка роботи middleware
-API логує всі запити у storage/logs/laravel.log. Щоб перевірити логування:
-```
-docker-compose exec app tail -f storage/logs/laravel.log
-```
-Для перевірки роботи middleware можна виконати будь-який запит до API та переглянути лог-файл.
+API логує всі запити у ```storage/logs/laravel.log```. Для перевірки роботи middleware можна виконати будь-який запит до API та переглянути лог-файл.
 
 ## Запуск обробника черг
 API використовує Redis для обробки черг:
